@@ -17,4 +17,8 @@ class Captain < ActiveRecord::Base
     where(id: sailors & motorboaters).uniq
   end
 
+  def self.non_sailors
+    where.not(id: sailors)
+  end
+
 end
