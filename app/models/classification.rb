@@ -5,4 +5,8 @@ class Classification < ActiveRecord::Base
   def self.my_all
      self.all
   end
+
+  def longest
+    joins(:boat).where(length: :asc).limit(1)
+  end
 end
